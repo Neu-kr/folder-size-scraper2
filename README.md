@@ -2,7 +2,7 @@
 指定したpathのサブディレクトリのサイズを降順に並び替えて出力します。
 
 ### 代入する方
-```bash
+```powershell
 param (
     [string]$Path = "."
 )
@@ -21,7 +21,7 @@ $dirSizes | Sort-Object -Property SizeKB -Descending | Format-Table -AutoSize
 ```
 
 ### あとから入力する方
-```bash
+```powershell
 $Path = Read-Host "path"
 
 if (Test-Path $Path -PathType Container) {
