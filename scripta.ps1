@@ -1,4 +1,4 @@
-$Path = Read-Host "データ量を調べるフォルダのパスを入力してください"
+$Path = Read-Host "path"
 
 if (Test-Path $Path -PathType Container) {
     $dirs = Get-ChildItem -Path $Path -Directory
@@ -13,5 +13,5 @@ if (Test-Path $Path -PathType Container) {
 
     $dirSizes | Sort-Object -Property SizeKB -Descending | Format-Table -AutoSize
 } else {
-    Write-Host "指定されたパスが存在しません。" -ForegroundColor Red
+    Write-Host "path-null" -ForegroundColor Red
 }
